@@ -22,7 +22,6 @@ def ping_test(remote_server):
     except subprocess.TimeoutExpired:  
         print("Ping command timed out.")  
     except Exception as e:  
-        print(f"Error executing ping: {e}") 
-
-
-
+        print(f"Error executing ping: {e}")
+    finally:
+        print("this is test for Git")
