@@ -4,12 +4,14 @@ def test_speed():
     try:
         # Create a Speedtest object
         st = speedtest.Speedtest()
+        best_server = st.get_best_server()
+        # st.get_servers([best_server])
 
-        # Fetch the list of servers and select the best one
-        st.get_best_server()
+        print(f"test speed with server {best_server['sponsor'],best_server['name'],best_server['country']}")
+
 
         print("Testing download speed...")
-        download_speed = st.download()  # Download speed in bits per second (bps)
+        download_speed = st.download() # Download speed in bits per second (bps)
         print("Testing upload speed...")
         upload_speed = st.upload()  # Upload speed in bits per second (bps)
 
